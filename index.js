@@ -5,6 +5,7 @@ import dotenv from "dotenv";
 const app = express();
 dotenv.config();
 
+//DB connection
 const connect = () => {
   mongoose
     .connect(process.env.MONGO)
@@ -16,6 +17,7 @@ const connect = () => {
     });
 };
 
+//create server
 app.listen(8000, () => {
   connect();
   console.log("Connected Server!");
